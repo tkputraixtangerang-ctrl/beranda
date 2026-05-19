@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Foto Guru</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"></noscript>
+
+  <style>
+    *, *::before, *::after {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: white;
+    }
+
+    .carousel-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 40s linear infinite;
+      padding: 20px 0;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    .teacher-card {
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .teacher-card:hover {
+      transform: scale(1.15);
+      z-index: 10;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .teacher-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .teacher-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .fallback-avatar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 640px) {
+      .teacher-card {
+        width: 120px;
+        height: 160px;
+        margin: 0 8px;
+        border-radius: 8px;
+      }
+
+      .fallback-avatar { font-size: 1.5rem; }
+
+      @keyframes scroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(calc(-120px * 14)); }
+      }
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .teacher-card {
+        width: 160px;
+        height: 220px;
+        margin: 0 15px;
+        border-radius: 10px;
+      }
+
+      .fallback-avatar { font-size: 2rem; }
+
+      @keyframes scroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(calc(-160px * 14)); }
+      }
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1025px) {
+      .teacher-card {
+        width: 200px;
+        height: 280px;
+        margin: 0 40px;
+        border-radius: 12px;
+      }
+
+      .fallback-avatar { font-size: 2rem; }
+
+      @keyframes scroll {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(calc(-280px * 14)); }
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+
+      <!-- Guru 1 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+        <img src="https://drive.google.com/thumbnail?id=1h_NoaAQDMlK9QntfAECf6fujYyZyoBnw&sz=w400" alt="Guru 1" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 2 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#f093fb,#f5576c);">
+        <img src="https://drive.google.com/thumbnail?id=1rIThomWBPKeKa8pu2lhwoL4L12RZ6syo&sz=w400" alt="Guru 2" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 3 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">
+        <img src="https://drive.google.com/thumbnail?id=1JHtr_wZpcvyTjqKbOygZuPDcg4fRqE_A&sz=w400" alt="Guru 3" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 4 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">
+        <img src="https://drive.google.com/thumbnail?id=1-ujea_VUQDcY9XSZ2AfH4Or2m_XMta0I&sz=w400" alt="Guru 4" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 5 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+        <img src="https://drive.google.com/thumbnail?id=1sdfYZTvndZFYxRoe32gwSp8-QLNYt1zc&sz=w400" alt="Guru 5" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 6 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">
+        <img src="https://drive.google.com/thumbnail?id=1CsxBy0skPJhmLo5sljWuCNuZUy64UiYh&sz=w400" alt="Guru 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 7 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);">
+        <img src="https://drive.google.com/thumbnail?id=1JncM8q8ITzpT5Q1c4oOJIiBzPBXnZCDb&sz=w400" alt="Guru 7" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 8 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ffecd2,#fcb69f);">
+        <img src="https://drive.google.com/thumbnail?id=1jRgVFKYXVB4T01wcjYWRbiaUo4pxFfeh&sz=w400" alt="Guru 8" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 9 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);">
+        <img src="https://drive.google.com/thumbnail?id=1kYABP0srrfcvlV9YRIB_wvAMUkGW01L4&sz=w400" alt="Guru 9" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 10 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#d299c2,#fef9d7);">
+        <img src="https://drive.google.com/thumbnail?id=1dUqAd3jrNjbqTWLwsqTuHr1POMGKJoVh&sz=w400" alt="Guru 10" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 11 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#89f7fe,#66a6ff);">
+        <img src="https://drive.google.com/thumbnail?id=1oT-C4tyyL7ogNXlnqguwRzk4-KxiRBme&sz=w400" alt="Guru 11" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 12 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#fddb92,#d1fdff);">
+        <img src="https://drive.google.com/thumbnail?id=1_KUudhPbfjelo_uamCHf9pzYAa4O2eJo&sz=w400" alt="Guru 12" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- Guru 13 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#9890e3,#b1f4cf);">
+        <img src="https://drive.google.com/thumbnail?id=18_f7jwB8IJEmYBnIGYfX7ofpci2WJJM3&sz=w400" alt="Guru 13" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+
+      <!-- Guru 14 -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ebc0fd,#d9ded8);">
+        <img src="https://drive.google.com/thumbnail?id=12CLr0ZdvbceNn0MJqAuWIr-_0Tko1VXx&sz=w400" alt="Guru 14" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+      <!-- === DUPLICATE untuk seamless loop === -->
+      <div class="teacher-card" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+        <img src="https://drive.google.com/thumbnail?id=1h_NoaAQDMlK9QntfAECf6fujYyZyoBnw&sz=w400" alt="Guru 1" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#f093fb,#f5576c);">
+        <img src="https://drive.google.com/thumbnail?id=1rIThomWBPKeKa8pu2lhwoL4L12RZ6syo&sz=w400" alt="Guru 2" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">
+        <img src="https://drive.google.com/thumbnail?id=1JHtr_wZpcvyTjqKbOygZuPDcg4fRqE_A&sz=w400" alt="Guru 3" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">
+        <img src="https://drive.google.com/thumbnail?id=1-ujea_VUQDcY9XSZ2AfH4Or2m_XMta0I&sz=w400" alt="Guru 4" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+        <img src="https://drive.google.com/thumbnail?id=1sdfYZTvndZFYxRoe32gwSp8-QLNYt1zc&sz=w400" alt="Guru 5" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">
+        <img src="https://drive.google.com/thumbnail?id=1CsxBy0skPJhmLo5sljWuCNuZUy64UiYh&sz=w400" alt="Guru 6" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);">
+        <img src="https://drive.google.com/thumbnail?id=1JncM8q8ITzpT5Q1c4oOJIiBzPBXnZCDb&sz=w400" alt="Guru 7" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ffecd2,#fcb69f);">
+        <img src="https://drive.google.com/thumbnail?id=1jRgVFKYXVB4T01wcjYWRbiaUo4pxFfeh&sz=w400" alt="Guru 8" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);">
+        <img src="https://drive.google.com/thumbnail?id=1kYABP0srrfcvlV9YRIB_wvAMUkGW01L4&sz=w400" alt="Guru 9" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#d299c2,#fef9d7);">
+        <img src="https://drive.google.com/thumbnail?id=1dUqAd3jrNjbqTWLwsqTuHr1POMGKJoVh&sz=w400" alt="Guru 10" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#89f7fe,#66a6ff);">
+        <img src="https://drive.google.com/thumbnail?id=1oT-C4tyyL7ogNXlnqguwRzk4-KxiRBme&sz=w400" alt="Guru 11" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#fddb92,#d1fdff);">
+        <img src="https://drive.google.com/thumbnail?id=1_KUudhPbfjelo_uamCHf9pzYAa4O2eJo&sz=w400" alt="Guru 12" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#9890e3,#b1f4cf);">
+        <img src="https://drive.google.com/thumbnail?id=18_f7jwB8IJEmYBnIGYfX7ofpci2WJJM3&sz=w400" alt="Guru 13" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👨‍🏫</div>
+      </div>
+      <div class="teacher-card" style="background:linear-gradient(135deg,#ebc0fd,#d9ded8);">
+        <img src="https://drive.google.com/thumbnail?id=12CLr0ZdvbceNn0MJqAuWIr-_0Tko1VXx&sz=w400" alt="Guru 14" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback-avatar" style="display:none;">👩‍🏫</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
